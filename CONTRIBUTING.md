@@ -56,15 +56,17 @@
   "source": "./",
   "strict": false,
   "description": "...",            // 可與 SKILL.md description 相近
-  "version": "1.0.0",              // 版本的單一真相在這裡；改 skill 就 bump
-  "author": { "name": "tienyulin" },
+  "author": { "name": "tienyulin" },           // 不設 version → 每次 commit 自動算新版（git SHA）
+
   "keywords": ["..."],
   "category": "workflow",
   "skills": ["./<skill-name>"]
 }
 ```
-- 同時把 `"./<skill-name>"` 加進 bundle plugin `llm-wiki-skills` 的 `skills` 陣列。
-- 改了 skill 內容 → bump 對應 plugin 的 `version`（user 才會收到更新）。
+- 同時把 `"./<skill-name>"` 加進 bundle plugin `llm-wiki-skills` 的 `skills` 陣列
+  （這樣全裝 bundle 的 user，update 後就會自動拿到這個新 skill）。
+- **不要設 `version`** —— 省略它，Claude 就用 git commit SHA 當版本：每次 push 都算新版，user
+  `/plugin marketplace update` + update 即拿最新，零手動 bump。（設了 version 反而要每次手動改，漏改 = 收不到更新。）
 
 ## 6. 驗證（提交前）
 
@@ -86,5 +88,5 @@ claude plugin marketplace remove llm-wiki-skills
 - [ ] SKILL.md ≤500 行；超出移到 `references/`
 - [ ] `scripts/` 純 stdlib；引用相對、只深一層
 - [ ] prose 中文、專有名詞英文+解釋
-- [ ] 加進 `marketplace.json`（自身 plugin + bundle）、設 `version`
+- [ ] 加進 `marketplace.json`（自身 plugin + bundle）—— 不設 `version`（commit 即更新）
 - [ ] `skills-ref validate` 過、本地 install 實測過

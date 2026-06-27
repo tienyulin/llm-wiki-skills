@@ -43,8 +43,7 @@ plugin `llm-wiki-skills` 的 `skills`：
   "source": "./",
   "strict": false,
   "description": "...",
-  "version": "1.0.0",          // 版本單一真相在這；之後改 skill 就 bump
-  "author": { "name": "tienyulin" },
+  "author": { "name": "tienyulin" },           // 不設 version → 每次 commit 自動算新版（用 git SHA）
   "keywords": ["..."],
   "category": "workflow",
   "skills": ["./<name>"]
@@ -68,5 +67,5 @@ claude plugin marketplace remove llm-wiki-skills
 - 目錄名 = `name` = kebab；`skills-ref validate` 過。
 - description 有 what+when+`Triggers -`、第三人稱、稍 pushy。
 - SKILL.md ≤500 行、自包含；scripts 純 stdlib。
-- 已加進 `marketplace.json`（自身 plugin + bundle）、設 `version`。
+- 已加進 `marketplace.json`（自身 plugin + bundle）—— **不設 `version`**，commit 即更新。
 - 本地 install 實測 enabled。

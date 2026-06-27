@@ -4,8 +4,7 @@
     "name": "tienyulin"
   },
   "metadata": {
-    "description": "Skills for the LLM Wiki: author processor-ready source docs and convert SOPs into specs.",
-    "version": "1.0.0"
+    "description": "Skills for the LLM Wiki: author processor-ready source docs and convert SOPs into specs."
   },
   "plugins": [
     {
@@ -13,7 +12,6 @@
       "source": "./",
       "strict": false,
       "description": "Produce the source docs an app feeds into the LLM Wiki (processor) — a compliant README for any kind (API / cronjob / worker / knowledge), plus a fresh openapi.json for OpenAPI-capable apps. Self-contained, bundled stdlib tools.",
-      "version": "1.0.0",
       "author": { "name": "tienyulin" },
       "keywords": ["wiki", "docs", "openapi", "readme", "authoring"],
       "category": "workflow",
@@ -24,7 +22,6 @@
       "source": "./",
       "strict": false,
       "description": "Convert an operations SOP (DBA runbook, infra procedure, deployment checklist) into a spec a human can approve and an AI agent can implement a three-layer FastAPI service from.",
-      "version": "1.0.0",
       "author": { "name": "tienyulin" },
       "keywords": ["sop", "spec", "fastapi", "runbook"],
       "category": "workflow",
@@ -35,7 +32,6 @@
       "source": "./",
       "strict": false,
       "description": "Add or modify an installable Claude Code skill in this repo — produce a spec-compliant SKILL.md, bundle its scripts/references, and register it in the marketplace. Use when authoring a new skill or editing an existing one.",
-      "version": "1.0.0",
       "author": { "name": "tienyulin" },
       "keywords": ["skill", "authoring", "meta", "marketplace"],
       "category": "workflow",
@@ -46,7 +42,6 @@
       "source": "./",
       "strict": false,
       "description": "Bundle — installs every LLM Wiki skill at once (wiki-doc-author + sop-to-spec + skill-author).",
-      "version": "1.1.0",
       "author": { "name": "tienyulin" },
       "keywords": ["wiki", "docs", "sop", "bundle"],
       "category": "workflow",
