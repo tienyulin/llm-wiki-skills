@@ -13,7 +13,7 @@ description: 在這個 llm-wiki-skills repo 裡新增或修改一個 Claude Code
 
 ## Step 1 — 命名 + 建目錄
 - `name`：kebab-case、≤64 字、只小寫英數+連字號、不可頭尾/連續連字號、**須等於目錄名**。
-- `mkdir <name>`（在 repo root）；可 `cp -r template/* <name>/` 起手。
+- `mkdir <name>`（在 repo root），裡面放 `SKILL.md`（＋需要時 `scripts/`、`references/`）。
 
 ## Step 2 — 寫 SKILL.md（frontmatter + body）
 frontmatter（官方欄位）：

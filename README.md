@@ -38,8 +38,8 @@ LLM Wiki 平台共用的 **Claude Code skills**，獨立成 repo 讓任何專案
 
 ## 寫新 skill
 
-照 [`CONTRIBUTING.md`](CONTRIBUTING.md) 的統一標準（官方 Agent Skills spec + 本 repo 慣例）。
-從 [`template/`](template/) 複製起手，填完加進 `.claude-plugin/marketplace.json`。
+用 `skill-author` skill 讓 AI agent 照標準產出（含註冊 marketplace）；或人工照
+[`CONTRIBUTING.md`](CONTRIBUTING.md) 的統一標準（官方 Agent Skills spec + 本 repo 慣例）寫。
 
 ## 設計原則
 

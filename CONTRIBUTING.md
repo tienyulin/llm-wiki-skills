@@ -1,10 +1,10 @@
 # 寫一個新 skill — 統一標準
 
 本 repo 的 skill 一律遵守**官方 Agent Skills spec**（<https://agentskills.io/specification>）＋下面的本 repo 慣例。
-新 skill 照 `template/` 起手，照這份檢查，加進 `.claude-plugin/marketplace.json`，就完成。
+照這份寫 `SKILL.md`、放工具、加進 `.claude-plugin/marketplace.json`，就完成。
 
 > 這份是給人看的。**要讓 AI agent 幫你寫 skill**：用 `skill-author` skill（它把同一套標準做成可執行流程，
-> 含註冊 marketplace 的步驟）。本檔與該 skill 同一套規範。
+> 含 frontmatter 範本與註冊 marketplace 的步驟）。本檔與該 skill 同一套規範。
 
 ## 1. 目錄結構（官方）
 
