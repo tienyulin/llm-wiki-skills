@@ -20,12 +20,14 @@ LLM Wiki 平台共用的 **Claude Code skills**，獨立成 repo 讓任何專案
 # 2) 安裝 —— 要哪個裝哪個，或一次全裝
 /plugin install wiki-doc-author@llm-wiki-skills      # 只要寫 wiki 文件的
 /plugin install sop-to-spec@llm-wiki-skills          # 只要 SOP→spec 的
-/plugin install llm-wiki-skills@llm-wiki-skills       # bundle：一次裝兩個
+/plugin install llm-wiki-skills@llm-wiki-skills       # bundle：一次裝全部
 
-# 之後更新
+# 之後更新（不設 version，每次 push 都算新版 → update 即拿最新）
 /plugin marketplace update llm-wiki-skills
 ```
 
+- **bundle 或 granular 擇一**：裝了 bundle 就別再單裝裡面的個別 skill —— 兩邊都裝會讓同一個 skill
+  從兩個 plugin 重複載入（不會報錯，但重複）。
 - **source 用 git URL 或本地路徑**，不要用「直接指 `marketplace.json` 的 URL」—— 那只下載單一檔，
   skill 的相對路徑（含 `scripts/`）不會解析。
 - **本地/離線**：先 clone，再 `/plugin marketplace add /path/to/llm-wiki-skills`。
