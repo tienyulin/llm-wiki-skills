@@ -1,0 +1,51 @@
+{
+  "name": "llm-wiki-skills",
+  "owner": {
+    "name": "tienyulin"
+  },
+  "metadata": {
+    "description": "Skills for the LLM Wiki: author processor-ready source docs and convert SOPs into specs."
+  },
+  "plugins": [
+    {
+      "name": "wiki-doc-author",
+      "source": "./",
+      "strict": false,
+      "description": "Produce the source docs an app feeds into the LLM Wiki (processor) — a compliant README for any kind (API / cronjob / worker / knowledge), plus a fresh openapi.json for OpenAPI-capable apps. Self-contained, bundled stdlib tools.",
+      "author": { "name": "tienyulin" },
+      "keywords": ["wiki", "docs", "openapi", "readme", "authoring"],
+      "category": "workflow",
+      "skills": ["./wiki-doc-author"]
+    },
+    {
+      "name": "sop-to-spec",
+      "source": "./",
+      "strict": false,
+      "description": "Convert an operations SOP (DBA runbook, infra procedure, deployment checklist) into a spec a human can approve and an AI agent can implement a three-layer FastAPI service from.",
+      "author": { "name": "tienyulin" },
+      "keywords": ["sop", "spec", "fastapi", "runbook"],
+      "category": "workflow",
+      "skills": ["./sop-to-spec"]
+    },
+    {
+      "name": "skill-author",
+      "source": "./",
+      "strict": false,
+      "description": "Add or modify an installable Claude Code skill in this repo — produce a spec-compliant SKILL.md, bundle its scripts/references, and register it in the marketplace. Use when authoring a new skill or editing an existing one.",
+      "author": { "name": "tienyulin" },
+      "keywords": ["skill", "authoring", "meta", "marketplace"],
+      "category": "workflow",
+      "skills": ["./skill-author"]
+    },
+    {
+      "name": "llm-wiki-skills",
+      "source": "./",
+      "strict": false,
+      "description": "Bundle — installs every LLM Wiki skill at once (wiki-doc-author + sop-to-spec + skill-author).",
+      "author": { "name": "tienyulin" },
+      "keywords": ["wiki", "docs", "sop", "bundle"],
+      "category": "workflow",
+      "skills": ["./wiki-doc-author", "./sop-to-spec", "./skill-author"]
+    }
+  ]
+}

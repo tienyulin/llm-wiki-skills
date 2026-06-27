@@ -1,6 +1,6 @@
 ---
 name: sop-to-spec
-description: Convert an operations SOP (any domain — DBA runbooks, infra procedures, deployment checklists) into an API spec that BOTH a human approver can read and an AI agent can implement a three-layer FastAPI service from. Trigger - "SOP 轉 spec", "convert SOP", "/sop-to-spec <path>", or when the user wants to turn a procedure document into an API.
+description: Convert an operations SOP (any domain — DBA runbooks, infra procedures, deployment checklists) into an API spec that BOTH a human approver can read and an AI agent can implement a three-layer FastAPI service from. Triggers - "SOP 轉 spec", "convert SOP", "/sop-to-spec <path>", or when the user wants to turn a procedure document into an API.
 ---
 
 # SOP → Implementation Spec（v5）

@@ -1,6 +1,6 @@
 ---
 name: wiki-doc-author
-description: 產出餵進 LLM 知識 wiki（llm-wiki processor）的源頭文件 —— 不管要記錄的是 HTTP API、cronjob/worker/CLI、還是純知識，都產一份合規 README，API 再附 openapi.json。processor 只吃兩種來源：openapi.json 與 README。新舊專案通用。開發者要寫或修這些文件時用。觸發詞 - "author wiki docs"、"幫我寫 wiki 文件"、"產 readme 給 processor"、"fix my openapi"、"補完 openapi"、"/wiki-doc-author"。
+description: 產出餵進 LLM 知識 wiki（llm-wiki processor）的源頭文件 —— 不管要記錄的是 HTTP API、cronjob/worker/CLI、還是純知識，都產一份合規 README，API 再附 openapi.json。processor 只吃兩種來源：openapi.json 與 README。新舊專案通用。開發者要寫或修這些文件時用。Triggers - "author wiki docs"、"幫我寫 wiki 文件"、"產 readme 給 processor"、"fix my openapi"、"補完 openapi"、"/wiki-doc-author"。
 ---
 
 # wiki-doc-author
