@@ -31,15 +31,26 @@
       "skills": ["./sop-to-spec"]
     },
     {
+      "name": "skill-author",
+      "source": "./",
+      "strict": false,
+      "description": "Add or modify an installable Claude Code skill in this repo — produce a spec-compliant SKILL.md, bundle its scripts/references, and register it in the marketplace. Use when authoring a new skill or editing an existing one.",
+      "version": "1.0.0",
+      "author": { "name": "tienyulin" },
+      "keywords": ["skill", "authoring", "meta", "marketplace"],
+      "category": "workflow",
+      "skills": ["./skill-author"]
+    },
+    {
       "name": "llm-wiki-skills",
       "source": "./",
       "strict": false,
-      "description": "Bundle — installs every LLM Wiki skill at once (wiki-doc-author + sop-to-spec).",
-      "version": "1.0.0",
+      "description": "Bundle — installs every LLM Wiki skill at once (wiki-doc-author + sop-to-spec + skill-author).",
+      "version": "1.1.0",
       "author": { "name": "tienyulin" },
       "keywords": ["wiki", "docs", "sop", "bundle"],
       "category": "workflow",
-      "skills": ["./wiki-doc-author", "./sop-to-spec"]
+      "skills": ["./wiki-doc-author", "./sop-to-spec", "./skill-author"]
     }
   ]
 }
