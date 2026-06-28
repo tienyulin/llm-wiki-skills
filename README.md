@@ -11,17 +11,49 @@ LLM Wiki 平台共用的 **Claude Code skills**，獨立成 repo 讓任何專案
 ## 團隊一鍵同步（推薦）
 
 一條指令把**所有 skill 裝齊／更新到最新** —— 內建的（wiki-doc-author / sop-to-spec /
-skill-author）**和指向其他 repo 的外部 mirror**（superpowers / andrej-karpathy-skills）全包：
+skill-author）**和指向其他 repo 的外部 mirror**（superpowers / andrej-karpathy-skills）全包。
+**不用 clone 任何 repo** —— `marketplace add` 會把整個 marketplace repo（含這支腳本）下載到
+`~/.claude/plugins/marketplaces/llm-wiki-skills/`，直接從那裡跑。
+
+### 新 user：第一次設定
 
 ```bash
-bash .claude/skills/skills-sync.sh
+# 0) 前置（每台機器一次）：裝好 Claude Code、設好對內網 GitLab 的 git auth（token / SSH）
+#    —— 跟平常 clone 公司 repo 一樣，skills-sync 背後就是 git clone。
+
+# 1) 加 marketplace（會一併下載 skills-sync.sh）
+claude plugin marketplace add https://gitlab.<你的公司>/<group>/llm-wiki-skills.git
+
+# 2) 一鍵裝齊全部 skill
+bash ~/.claude/plugins/marketplaces/llm-wiki-skills/skills-sync.sh
+
+# 3) 生效
+/reload-plugins            # 在 claude session 裡；或重啟 claude
+
+# 4) 確認
+claude plugin list         # 應看到 5 個 skill plugin
 ```
 
-- 裝跟更新都這一條（fresh 機器會裝、已裝的會帶到最新版），跑完照提示 `/reload-plugins` 或重啟生效。
-- 清單**讀 `marketplace.json`**（唯一真相）→ 之後 marketplace 加新 skill，大家重跑這條就自動補上，
-  **不用記、不會漏**。bundle 會自動跳過以免和它涵蓋的個別 skill 重複載入。
-- 用前把 `skills-sync.sh` 開頭的 `GITLAB_URL` 換成你們內網 GitLab mirror 的 `.git`。
-- 離線驗證篩選邏輯：`bash .claude/skills/skills-sync.sh --self-test`。
+### 之後更新：同一條
+
+```bash
+bash ~/.claude/plugins/marketplaces/llm-wiki-skills/skills-sync.sh
+```
+
+腳本內建 `marketplace add || update`，會**先 git-pull 刷新** marketplace（含 marketplace.json 和腳本本身），
+再讀**新**清單裝/更新。所以：
+
+- **裝跟更新是同一條**；fresh 機器會裝、已裝的 `plugin update` 帶到最新版。
+- 清單**讀 `marketplace.json`**（唯一真相）→ marketplace 加了新 skill，大家重跑這條就自動補上，
+  **不用記、不會漏**（即使你手上是舊腳本也一樣，因為它是「先刷新再讀清單」）。bundle 會自動跳過，
+  避免和它涵蓋的個別 skill 重複載入。
+- 嫌路徑長可加 alias：`alias skills-sync='bash ~/.claude/plugins/marketplaces/llm-wiki-skills/skills-sync.sh'`，
+  之後更新只要 `skills-sync`。
+
+> 管理者一次性：用前把 `skills-sync.sh` 開頭的 `GITLAB_URL` 與 `marketplace.json` 裡 external 的
+> placeholder URL，換成你們內網 GitLab mirror 的 `.git`。離線驗篩選邏輯：`skills-sync.sh --self-test`。
+>
+> 已 clone 平台 repo 的開發者也可直接跑 repo 內那份：`bash .claude/skills/skills-sync.sh`（等效）。
 
 底下是手動逐個安裝的細節（想精挑時用）。
 
