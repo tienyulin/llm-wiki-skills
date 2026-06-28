@@ -72,8 +72,12 @@ while IFS= read -r name; do
   [ -n "$name" ] || continue
   echo "  • $name"
   # install covers a fresh machine; update brings an already-installed one to latest.
-  claude plugin install "$name@$MARKET" 2>/dev/null || true
-  claude plugin update  "$name@$MARKET" 2>/dev/null || true
+  # If both fail (e.g. an external mirror is unreachable / not set up yet), say so
+  # instead of swallowing it silently — otherwise a missing skill looks installed.
+  ok=0
+  claude plugin install "$name@$MARKET" 2>/dev/null && ok=1
+  claude plugin update  "$name@$MARKET" 2>/dev/null && ok=1
+  [ "$ok" = 1 ] || echo "    ⚠ $name 未能安裝/更新（mirror 不可達或尚未設定？已跳過）"
 done < <(plugins_to_install "$MARKETPLACE_JSON")
 
 echo "✓ done — run /reload-plugins or restart the session to apply"
