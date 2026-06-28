@@ -32,3 +32,16 @@ repos:
         language: system
         pass_filenames: false
         always_run: true
+      # The wiki-doc-author gate scripts self-check their logic (stdlib, no deps).
+      - id: openapi-completeness-self-test
+        name: openapi_completeness self-test
+        entry: python wiki-doc-author/scripts/openapi_completeness.py --self-test
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: lint-frontmatter-self-test
+        name: lint_frontmatter self-test
+        entry: python wiki-doc-author/scripts/lint_frontmatter.py --self-test
+        language: system
+        pass_filenames: false
+        always_run: true

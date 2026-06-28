@@ -25,3 +25,7 @@ jobs:
         run: pylint $(find . -name "*.py")
       - name: validate skills
         run: python skill-author/scripts/validate_skill.py
+      - name: wiki-doc-author script self-tests
+        run: |
+          python wiki-doc-author/scripts/openapi_completeness.py --self-test
+          python wiki-doc-author/scripts/lint_frontmatter.py --self-test
