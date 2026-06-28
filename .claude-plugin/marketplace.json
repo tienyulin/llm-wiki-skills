@@ -55,6 +55,15 @@
       "keywords": ["tdd", "debugging", "brainstorming", "external"],
       "category": "development",
       "homepage": "https://github.com/obra/superpowers"
+    },
+    {
+      "name": "andrej-karpathy-skills",
+      "source": { "source": "url", "url": "https://gitlab.internal.example.com/mirrors/andrej-karpathy-skills.git" },
+      "description": "External — behavioral guidelines to reduce common LLM coding mistakes (Think Before Coding, Simplicity, …). Mirrored from forrestchang/andrej-karpathy-skills into the internal GitLab; swap the url to your GitLab mirror. No sha = follows the mirror's default branch.",
+      "author": { "name": "forrestchang" },
+      "keywords": ["coding", "guidelines", "quality", "external"],
+      "category": "development",
+      "homepage": "https://github.com/forrestchang/andrej-karpathy-skills"
     }
   ]
 }
